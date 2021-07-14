@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}68 Duck{% endblock %}
+{% block links %}<link rel="stylesheet" href="{{url_for('static',filename='indexStyle.css')}}" type="text/css">{% endblock %}
+{% block scripts %}<script src="{{url_for('static', filename='app.js')}}" type="text/javascript"></script>{% endblock %}
+{% block header %}
+2048
+{% endblock %}
+{% block content %}
+<br/>
+<div class="grid" id="grid">
+  {% for i in across %}
+    {% for j in down %}
+      <div class="square" id="square{{i*4+j}}"></div>
+    {% endfor %}
+  {% endfor %}
+
+</div>
+
+{% endblock %}
